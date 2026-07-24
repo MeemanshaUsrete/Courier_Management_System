@@ -5,6 +5,7 @@ import ForgotPassword from "./pages/ResetPassword";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard";
+import NewShipment from "./pages/NewShipment";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>    
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />}/>    
-
+        <Route path="/newshipment" element={<NewShipment/>}/>    
       </Routes>
     </BrowserRouter>
   );
