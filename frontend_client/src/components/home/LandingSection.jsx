@@ -30,10 +30,15 @@ function LandingSection() {
           through one secure and intelligent courier management platform.
         </p>
 
-        <button className="mt-10 bg-orange-500 hover:bg-orange-600 drop-shadow-lg transition px-7 py-3 rounded-xl font-semibold">
-          Track Parcel
-        </button>
+        <div className="mt-10 flex gap-5">
+          <button className="bg-orange-500 hover:bg-orange-600 transition px-7 py-3 rounded-xl font-semibold">
+            Track Parcel
+          </button>
 
+          <button className="border border-white hover:bg-white hover:text-black transition px-7 py-3 rounded-xl font-semibold">
+            Learn More
+          </button>
+        </div>
       </div>
     </section>
   );
