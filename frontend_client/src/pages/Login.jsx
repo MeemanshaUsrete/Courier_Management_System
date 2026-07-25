@@ -55,14 +55,14 @@ const Login = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-5 md:px-20"
+      className="min-h-screen bg-cover bg-center flex items-center justify-end px-5 md:px-20"
       style={{
         backgroundImage:
           `url(${bgImage})`,
       }}
     >
       {/* Glass Card */}
-      <div className="w-full max-w-md bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-10">
+      <div className="w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-10">
         {/* Heading */}
         <div className="text-center mb-8">
           <h1 className="text-5xl font-extrabold text-orange-500">
