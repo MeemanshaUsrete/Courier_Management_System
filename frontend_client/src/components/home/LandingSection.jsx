@@ -32,6 +32,9 @@ function LandingSection() {
           Track Parcel
         </button>
 
+          <button className="border border-white hover:bg-white hover:text-black transition px-7 py-3 rounded-xl font-semibold">
+            Learn More
+          </button>
       </div>
     </section>
   );

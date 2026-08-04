@@ -118,7 +118,7 @@ function Signup() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-5 md:px-20"
+      className="min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="absolute inset-0 bg-black/50"></div>
