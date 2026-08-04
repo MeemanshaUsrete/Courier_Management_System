@@ -5,6 +5,8 @@ import ForgotPassword from "./pages/ResetPassword";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard";
+import NewShipment from "./pages/NewShipment";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -13,10 +15,31 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/profile" element={<Profile/>}/>    
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />    
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />}/>    
-
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />    
+        <Route
+          path="/newshipment"
+          element={
+            <ProtectedRoute>
+              <NewShipment />
+            </ProtectedRoute>
+          }
+        />    
       </Routes>
     </BrowserRouter>
   );

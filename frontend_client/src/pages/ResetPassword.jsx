@@ -4,20 +4,30 @@ import bgImage from "../assets/images/bg.png";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
+    setMessage("");
 
-    console.log(email);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
 
-    // TODO:
-    // Call backend API
-    // POST /api/auth/forgot-password
+    setMessage("If an account exists with this email, an OTP has been sent!");
   };
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
+      className="min-h-screen bg-cover bg-center flex items-center justify-center p-5"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
@@ -37,9 +47,22 @@ function ForgotPassword() {
           We'll send you an OTP to reset your password.
         </p>
 
+        {error && (
+          <div className="mt-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm text-center">
+            {error}
+          </div>
+        )}
+
+        {message && (
+          <div className="mt-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-sm text-center font-medium">
+            {message}
+          </div>
+        )}
+
         <form
           onSubmit={handleSubmit}
-          className="mt-8 space-y-6"
+          className="mt-6 space-y-5"
+          noValidate
         >
 
           <div>
@@ -50,10 +73,14 @@ function ForgotPassword() {
             <input
               type="email"
               placeholder="Enter Email"
-              className="w-full px-4 py-3 rounded-xl bg-white/80 outline-none focus:ring-2 focus:ring-orange-500"
+              className={`w-full px-4 py-3 rounded-xl bg-white/80 outline-none transition ${
+                error ? "border-2 border-red-500 focus:ring-2 focus:ring-red-200" : "focus:ring-2 focus:ring-orange-500"
+              }`}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (error) setError("");
+              }}
             />
           </div>
 

@@ -24,12 +24,10 @@ function LandingSection() {
           <br />
           Made Simple
         </h1>
-
         <p className="mt-6 text-lg text-white leading-8 max-w-xl drop-shadow-lg">
           Book shipments, track parcels in real time, and manage deliveries
           through one secure and intelligent courier management platform.
         </p>
-
         <button className="mt-10 bg-orange-500 hover:bg-orange-600 drop-shadow-lg transition px-7 py-3 rounded-xl font-semibold">
           Track Parcel
         </button>
