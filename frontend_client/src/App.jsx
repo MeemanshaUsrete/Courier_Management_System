@@ -7,12 +7,14 @@ import AdminDashboard from "./pages/AdminDashboard";
 import NewShipment from "./pages/NewShipment";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CustomerDashboard from "./pages/CustomerDashboard";
+import ForgotPassword from "./pages/ResetPassword";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Signup />} />
         <Route
           path="/profile"
